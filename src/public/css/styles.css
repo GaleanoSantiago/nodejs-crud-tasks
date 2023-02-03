@@ -1,0 +1,235 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root{
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning:#ffc107;
+    --bs-danger:#dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    
+    --bs-gray-500: #adb5bd;
+    --bs-gray-600: #6c757d;
+    --bs-gray-700: #495057;
+    --z1:#232741;
+    --z2:#2c2e43;
+    --darkBodyP:#181818;
+    --darkPretty: #333;
+    --darkPretty2:#222;
+    --yellowMostaza: #e8a900;
+    --bg-whiteBlue:#F0F0F0;
+    --bg-whiteSmooth:#FAFAFA;
+    --azulWhite: #f2f6fc;
+    --azulLight: #f6f8fc;
+    --azulLite: #eaf1fb;
+    --aL: #f5f6f7;
+
+    --rosaPastel:#fdcae1;
+    --rosaPastel2:#ff6961;
+    --infoPastel:#b2dafa;
+    --amarPastel:#fdfd96;
+    --successPastel:#a5eea0;
+    --purplePastel:#c0a0c3;
+
+    --nodePrimary:#3C873A;
+    --nodeSecondary:#68A063;
+    --nodeDark:#303030;
+}
+/* body{
+    background-color:var(--nodeDark);
+} */
+section{
+    padding:40px 0;
+}
+
+.nav-link{
+    color:var(--bs-light);
+    margin-left:30px;
+}
+
+.nav-link.create{
+    color:var(--nodePrimary);
+}
+.nav-link.create:hover, .nav-link:hover{
+    color:var(--nodeSecondary);
+}
+
+.btn-nav-link:hover{
+    background-color: transparent;
+    border:1px solid var(--bs-success);
+    transition:all .4s ease;
+}
+.btn-nav-link{
+    max-width:100px;
+}
+
+.btn-create{
+    width:200px;
+}
+
+.btn-sccs{
+    width:100%;
+    padding: 10px 0;
+}
+.fondo{
+    background-image: linear-gradient(to left, #3e863d, #489440, #53a243, #5eb145, #6bbf47);
+    /* background-image: linear-gradient(to right bottom, #3e863d, #489440, #53a243, #5eb145, #6bbf47); */
+    /* height:100vh; */
+}
+.container-card{
+    /* margin:-20px 0; */
+    /* height:500px; */
+    /* border:1px solid #000; */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+}
+.tarjeta{
+    width: 400px;
+    /* #eceff1 */
+    background: #181818;
+    color:var(--bs-light);
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 77px 55px 53px 55px;
+    /* box-shadow: 25px 40px 28px 0px rgba(0, 0, 0, 0.38); */
+    /* box-shadow: rgba(17, 12, 46, 0.15) 0px 50px 100px 0px; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.img-card{
+    display:flex;
+    justify-content:center;
+}
+.img-card svg{
+    width:80%;
+}
+.co-1,.co-2,.co-3,.co-4,.co-5,.co-6,.co-7,.co-8,.co-9,.co-10,.co-11{
+    transition:stop-color .4s ease;
+}
+
+footer{
+    background-color:#212529;
+    color:var(--bs-gray-500);
+    height:50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* border:1px solid #fff; */
+    position:fixed;
+    bottom:0;
+    width:100%;
+}
+footer p{
+    font-size:1em;
+}
+footer a{
+    color:var(--bs-light);
+    text-decoration:none;
+    transition:color .4s ease;
+}
+footer a:hover{
+    color: var(--bs-success);
+    transition:color .4s ease;
+}
+
+svg:hover .co-1{
+    stop-color:#6bbf47;
+    transition:all .4s ease;
+}
+svg:hover .co-2{
+    stop-color:#659e5a;
+    transition:all .4s ease;
+}
+svg:hover .co-3{
+    stop-color:#75ac64;
+    transition:all .4s ease;
+}
+svg:hover .co-4{
+    stop-color:#619857;
+    transition:all .4s ease;
+}
+svg:hover .co-5{
+    stop-color:#3e863d;
+    transition:all .4s ease;
+}
+svg:hover .co-6{
+    stop-color:#659e5a;
+    transition:all .4s ease;
+}
+svg:hover .co-7{
+    stop-color:#3e863d;
+    transition:all .4s ease;
+}
+svg:hover .co-8{
+    stop-color:#659e5a;
+    transition:all .4s ease;
+}
+svg:hover .co-9{
+    stop-color:#75ac64;
+    transition:all .4s ease;
+}
+svg:hover .co-10{
+    stop-color:#79b461;
+    transition:all .4s ease;
+}
+svg:hover .co-11{
+    stop-color:#6bbf47;
+    transition:all .4s ease;
+} 
+
+@media only screen and (max-width:575px){
+
+    /* .btn-nav-link{
+        border:none;
+    } */
+    .nav-item{
+        margin-top: 10px;
+    }
+
+
+    footer p, table{
+        font-size:13px;
+    }
+
+    .container-form{
+        width:70%;
+    }
+
+
+    .tarjeta{
+        width:300px;
+    }
+
+    footer{
+        position:static;
+    }
+}
+
+@media only screen and (max-width:465px){
+
+    .container-form{
+        width:90%;
+    }
+    footer p{
+        font-size:12px;
+    }
+}
+
+@media only screen and (max-width:375px){
+
+    footer p{
+        font-size:12px;
+    }
+    footer{
+        padding:0 10px;
+        padding-top:10px;
+    }
+}

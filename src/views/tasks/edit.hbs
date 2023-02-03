@@ -1,0 +1,21 @@
+<div class="container">
+<h1 class="mb-4 text-center">Editar Tarea</h1>
+<div class="row d-flex justify-content-center">
+    <div class="col-12 col-lg-6 col-md-8 col-sm-10 container-form">
+        {{#each tasks}}
+    <form action="" method="POST" id="formEdit">
+        <div class="mb-3">
+            <input type="text" class="form-control" name="titulo" id="" value="{{titulo}}" placeholder="Titulo de la Tarea" >
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control" name="descripcion" placeholder="Descripción de la Tarea" id="" cols="30" rows="10">{{descripcion}}</textarea>
+        </div>
+        <div class="mb-3 text-center">
+            {{!-- onclick="return confirm('Confirmar edición de tarea?')" --}}
+            <button type="submit" id="btnEdit" class="btn btn-success btn-sccs">Guardar</button>
+        </div>
+    </form>
+    {{/each}}
+    </div>
+</div>
+</div>
