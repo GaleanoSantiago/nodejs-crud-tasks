@@ -24,8 +24,8 @@ app.use(myconnection(mysql,{
     password: config.DB_PASSWORD,
     port: config.DB_PORT,
     database: config.DB_NAME
-}, "single"));
-
+}));
+// , "single"
 // Donde cargar los archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));
 
