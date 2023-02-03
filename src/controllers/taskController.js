@@ -1,30 +1,30 @@
-const index = async (req, res)=>{
-    await req.getConnection((err, conn)=>{
-        conn.query("SELECT * FROM tasks", (err, tasks)=>{
-            if(err){
-                res.json(err);
-            }
-            res.render("tasks/index",{tasks});
-            // console.log(tasks);
-            // res.json(tasks);
-
-        })
-    })
-    
-}
-// const index = (req, res)=>{
-//     req.getConnection((err, conn)=>{
+// const index = async (req, res)=>{
+//     await req.getConnection((err, conn)=>{
 //         conn.query("SELECT * FROM tasks", (err, tasks)=>{
 //             if(err){
 //                 res.json(err);
 //             }
-//             // res.json(tasks);
-//             res.render("tasks/index", {tasks});
+//             res.render("tasks/index",{tasks});
 //             // console.log(tasks);
+//             // res.json(tasks);
 
 //         })
 //     })
+    
 // }
+const index = (req, res)=>{
+    req.getConnection((err, conn)=>{
+        conn.query("SELECT * FROM tasks", (err, tasks)=>{
+            if(err){
+                res.json(err);
+            }
+            // res.json(tasks);
+            res.render("tasks/index", {tasks});
+            // console.log(tasks);
+
+        })
+    })
+}
 
 const create = (req, res)=>{
     res.render("tasks/create");
