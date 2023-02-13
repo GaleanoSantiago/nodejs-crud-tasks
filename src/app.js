@@ -2,10 +2,12 @@ const express = require("express");
 const {engine} = require("express-handlebars");
 const myconnection = require("express-myconnection");
 const bodyParser = require("body-parser");
-const mysql = require("mysql");
+// const mysql = require("mysql");
 const path = require("path");
 const tasksRoutes = require("./routers/tasks")
 const config = require("./config");
+// const db = require("mysql2/promise");
+
 
 // Crear app de express
 const app = express();
@@ -17,14 +19,23 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+// const pool = db.createPool({
+//     host: config.DB_HOST,
+//     user: config.DB_USER,
+//     password: config.DB_PASSWORD,
+//     port: config.DB_PORT,
+//     database: config.DB_NAME
+// })
 
-app.use(myconnection(mysql,{
-    host: config.DB_HOST,
-    user: config.DB_USER,
-    password: config.DB_PASSWORD,
-    port: config.DB_PORT,
-    database: config.DB_NAME
-}, "single"));
+
+
+// app.use(myconnection(mysql,{
+//     host: config.DB_HOST,
+//     user: config.DB_USER,
+//     password: config.DB_PASSWORD,
+//     port: config.DB_PORT,
+//     database: config.DB_NAME
+// }, "single"));
 
 // Donde cargar los archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));
@@ -50,3 +61,5 @@ app.use("/", tasksRoutes);
 app.get("/", (req, res)=>{
     res.render("home");
 })
+
+// module.exports = pool;
