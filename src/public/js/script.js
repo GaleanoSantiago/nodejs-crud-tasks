@@ -65,12 +65,14 @@ if (formDelete !== null) {
 let data;
 if (formCreate!==null){
 
+  let url = window.location;  //Para obtener la url de mi posicion actual
+
   formCreate.addEventListener("submit",(e)=>{
     e.preventDefault();
     data = { titulo: `${inputTitulo.value}`, descripcion:`${inputDesc.value}` };
   
     console.log(data);
-    fetch('http://localhost:3000/create', {
+    fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
